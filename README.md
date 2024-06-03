@@ -12,31 +12,31 @@ pnpm i
 ## Run Bun (JavascriptCore Benchmark)
 
 ```shell
-bun index.js
+bun ./index.js
 ```
 
 ### Results
 
 ```
-bun /home/brian/work/ctx-core/rmemo-vs-signals-proposal-benchmark/index.js
-Signal.Computed standalone x 4,485 ops/sec ±3.11% (78 runs sampled)
-Signal.Computed watch x 3,560 ops/sec ±2.42% (78 runs sampled)
-memo_ x 4,430 ops/sec ±2.69% (83 runs sampled)
-Fastest is Signal.Computed standalone,memo_
+bun ./index.js
+1000 Signal chain: without watcher x 4,968 ops/sec ±2.60% (80 runs sampled)
+1000 Signal chain: with watcher x 3,941 ops/sec ±1.93% (85 runs sampled)
+1000 rmemo chain x 4,829 ops/sec ±1.63% (89 runs sampled)
+Fastest is 1000 Signal chain: without watcher,1000 rmemo chain
 ```
 
 ## Run NodeJS (V8) Benchmark
 
 ```shell
-bun index.js
+node ./index.js
 ```
 
 ### Results
 
 ```
-node /home/brian/work/ctx-core/rmemo-vs-signals-proposal-benchmark/index.js
-Signal.Computed standalone x 3,333 ops/sec ±1.54% (91 runs sampled)
-Signal.Computed watch x 2,169 ops/sec ±2.30% (91 runs sampled)
-memo_ x 507 ops/sec ±47.09% (46 runs sampled)
-Fastest is Signal.Computed standalone
+node ./index.js
+1000 Signal chain: without watcher x 3,317 ops/sec ±1.26% (92 runs sampled)
+1000 Signal chain: with watcher x 2,414 ops/sec ±1.15% (93 runs sampled)
+1000 rmemo chain x 542 ops/sec ±45.31% (46 runs sampled)
+Fastest is 1000 Signal chain: without watcher
 ```

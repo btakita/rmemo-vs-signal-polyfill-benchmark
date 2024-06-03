@@ -1,9 +1,9 @@
 import Benchmark from 'benchmark'
-import { memo_ } from 'ctx-core/rmemo'
+import { memo_, sig_} from 'ctx-core/rmemo'
 import { Signal } from 'signal-polyfill'
 const suite = new Benchmark.Suite
 suite
-	.add('Signal.Computed standalone', ()=>{
+	.add('1000 Signal chain: without watcher', ()=>{
 		let a1 = new Array(1000)
 		a1[0] = new Signal.State(1)
 		for (let i = 1; i < 1000; i++) {
@@ -11,7 +11,7 @@ suite
 		}
 		a1[999].get()
 	})
-	.add('Signal.Computed watch', ()=>{
+	.add('1000 Signal chain: with watcher', ()=>{
 		let pending = false
 		let w = new Signal.subtle.Watcher(()=>{
 			if (!pending) {
@@ -31,9 +31,9 @@ suite
 		w.watch(a1[999])
 		a1[999].get()
 	})
-	.add('memo_', ()=>{
+	.add('1000 rmemo chain', ()=>{
 		let a1 = new Array(1000)
-		a1[0] = memo_(()=>1)
+		a1[0] = sig_(1)
 		for (let i = 1; i < 1000; i++) {
 			a1[i] = memo_(()=>a1[i - 1]() + 10)
 		}
