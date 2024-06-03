@@ -30,6 +30,7 @@
 		"exec": "$@"
 	},
 	"dependencies": {
+		"benchmark": "^2.1.4",
 		"ctx-core": "^7.2.14",
 		"signal-polyfill": "^0.1.1"
 	},

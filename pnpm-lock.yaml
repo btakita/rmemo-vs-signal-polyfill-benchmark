@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      benchmark:
+        specifier: ^2.1.4
+        version: 2.1.4
       ctx-core:
         specifier: ^7.2.14
         version: 7.2.14
@@ -17,14 +20,32 @@ importers:
 
 packages:
 
+  benchmark@2.1.4:
+    resolution: {integrity: sha512-l9MlfN4M1K/H2fbhfMy3B7vJd6AGKJVQn2h6Sg/Yx+KckoUA7ewS5Vv6TjSq18ooE1kS9hhAlQRH3AkXIh/aOQ==}
+
   ctx-core@7.2.14:
     resolution: {integrity: sha512-EVpTq7G4SlZmgjrki5bF27zi/St8L8gdg9uLvqDPnSYV4Qga2UlFXkHxYe4C+D98aNvCqfj8qN/DlFi9qhDOuw==}
+
+  lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
+  platform@1.3.6:
+    resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
 
   signal-polyfill@0.1.1:
     resolution: {integrity: sha512-ZihPkMjiWOCZaYOb/vi1YLj+f0GTKVF7tQVNovtK32yjqcvRvjGPTwwX3Ad45mQ8v08kLUBagsOkuyJ6gpwhWA==}
 
 snapshots:
 
+  benchmark@2.1.4:
+    dependencies:
+      lodash: 4.17.21
+      platform: 1.3.6
+
   ctx-core@7.2.14: {}
+
+  lodash@4.17.21: {}
+
+  platform@1.3.6: {}
 
   signal-polyfill@0.1.1: {}
