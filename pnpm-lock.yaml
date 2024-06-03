@@ -1,0 +1,30 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      ctx-core:
+        specifier: ^7.2.14
+        version: 7.2.14
+      signal-polyfill:
+        specifier: ^0.1.1
+        version: 0.1.1
+
+packages:
+
+  ctx-core@7.2.14:
+    resolution: {integrity: sha512-EVpTq7G4SlZmgjrki5bF27zi/St8L8gdg9uLvqDPnSYV4Qga2UlFXkHxYe4C+D98aNvCqfj8qN/DlFi9qhDOuw==}
+
+  signal-polyfill@0.1.1:
+    resolution: {integrity: sha512-ZihPkMjiWOCZaYOb/vi1YLj+f0GTKVF7tQVNovtK32yjqcvRvjGPTwwX3Ad45mQ8v08kLUBagsOkuyJ6gpwhWA==}
+
+snapshots:
+
+  ctx-core@7.2.14: {}
+
+  signal-polyfill@0.1.1: {}

@@ -1,0 +1,40 @@
+{
+	"name": "@btakita/rmemo-vs-signal-polyfill-benchmark",
+	"version": "1.0.0",
+	"private": true,
+	"description": "ctx-core monorepo",
+	"type": "module",
+	"keywords": [
+		"rmemo",
+		"signals-polyfill"
+	],
+	"homepage": "https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark",
+	"bugs": {
+		"url": "https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark.git"
+	},
+	"license": "Apache-2.0",
+	"author": {
+		"name": "Brian Takita",
+		"url": "https://briantakita.me",
+		"email": "info+rmemo-vs-signal-polyfill-benchmark@briantakita.me"
+	},
+	"bin": {
+	},
+	"scripts": {
+		"build": ":",
+		"clean": ":",
+		"exec": "$@"
+	},
+	"dependencies": {
+		"ctx-core": "^7.2.14",
+		"signal-polyfill": "^0.1.1"
+	},
+	"devDependencies": {
+	},
+	"noUpdate": [],
+	"preferGlobal": true
+}
