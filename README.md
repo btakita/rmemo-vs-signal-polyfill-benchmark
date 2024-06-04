@@ -9,48 +9,97 @@ cd rmemo-vs-signal-polyfill-benchmark
 pnpm i
 ```
 
-## Run Bun (JavascriptCore Benchmark)
+## Run async.js with Bun (JavascriptCore Benchmark)
 
 ```shell
-bun ./index.js
+bun ./async.js
 ```
 
 ### Results
 
 ```
-bun ./index.js
+bun ./async.js
+1000 Signal chain: without watcher x 3,912 ops/sec ±3.68% (71 runs sampled)
+1000 Signal chain: with watcher x 3,025 ops/sec ±3.61% (75 runs sampled)
+1000 rmemo chain x 2,747 ops/sec ±4.73% (69 runs sampled)
+Fastest is 1000 Signal chain: without watcher
+```
+
+## Run sync.js with NodeJS (V8) Benchmark
+
+```shell
+node ./async.js
+```
+
+### Results
+
+```
+node async.js
+1000 Signal chain: without watcher x 1,101 ops/sec ±8.32% (67 runs sampled)
+1000 Signal chain: with watcher x 1,003 ops/sec ±3.43% (72 runs sampled)
+1000 rmemo chain x 1,054 ops/sec ±4.92% (70 runs sampled)
+Fastest is 1000 Signal chain: without watcher
+```
+
+## Run sync.js with Deno (V8) Benchmark
+
+```shell
+deno run ./sync.js
+```
+
+### Results
+
+```
+deno run async.js
+✅ Granted all read access.
+1000 Signal chain: without watcher x 1,005 ops/sec ±6.28% (38 runs sampled)
+1000 Signal chain: with watcher x 825 ops/sec ±5.12% (40 runs sampled)
+1000 rmemo chain x 1,043 ops/sec ±5.36% (44 runs sampled)
+Fastest is 1000 rmemo chain,1000 Signal chain: without watcher
+```
+
+## Run sync.js with Bun (JavascriptCore Benchmark)
+
+```shell
+bun ./sync.js
+```
+
+### Results
+
+```
+bun ./sync.js
 1000 Signal chain: without watcher x 4,968 ops/sec ±2.60% (80 runs sampled)
 1000 Signal chain: with watcher x 3,941 ops/sec ±1.93% (85 runs sampled)
 1000 rmemo chain x 4,829 ops/sec ±1.63% (89 runs sampled)
 Fastest is 1000 Signal chain: without watcher,1000 rmemo chain
 ```
 
-## Run NodeJS (V8) Benchmark
+## Run sync.js with NodeJS (V8) Benchmark
 
 ```shell
-node ./index.js
+node ./sync.js
 ```
 
 ### Results
 
 ```
-node ./index.js
+node ./sync.js
 1000 Signal chain: without watcher x 3,317 ops/sec ±1.26% (92 runs sampled)
 1000 Signal chain: with watcher x 2,414 ops/sec ±1.15% (93 runs sampled)
 1000 rmemo chain x 542 ops/sec ±45.31% (46 runs sampled)
 Fastest is 1000 Signal chain: without watcher
 ```
 
-## Run Deno (V8) Benchmark
+## Run sync.js with Deno (V8) Benchmark
 
 ```shell
-deno run ./index.js
+deno run ./sync.js
 ```
 
 ### Results
 
 ```
-deno run index.js
+deno run ./sync.js
 ✅ Granted all read access.
 1000 Signal chain: without watcher x 3,346 ops/sec ±2.37% (64 runs sampled)
 1000 Signal chain: with watcher x 2,384 ops/sec ±1.81% (63 runs sampled)
