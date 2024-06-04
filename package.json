@@ -22,8 +22,7 @@
 		"url": "https://briantakita.me",
 		"email": "info+rmemo-vs-signal-polyfill-benchmark@briantakita.me"
 	},
-	"bin": {
-	},
+	"bin": {},
 	"scripts": {
 		"build": ":",
 		"clean": ":",
@@ -31,10 +30,11 @@
 	},
 	"dependencies": {
 		"benchmark": "^2.1.4",
-		"ctx-core": "^7.2.14",
+		"ctx-core": "^7.2.16",
 		"signal-polyfill": "^0.1.1"
 	},
 	"devDependencies": {
+		"@ctx-core/monorepo": "^21.4.127"
 	},
 	"noUpdate": [],
 	"preferGlobal": true
