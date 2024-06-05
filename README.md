@@ -9,7 +9,126 @@ cd rmemo-vs-signal-polyfill-benchmark
 pnpm i
 ```
 
-## Run async.js with Bun (JavascriptCore Benchmark)
+## bun memory-rmemo.js
+
+```shell
+bun ./memory-rmemo.js
+...
+1000000 {
+  rss: 1022812160,
+  heapTotal: 890159104,
+  heapUsed: 310031248,
+  external: 209487,
+  arrayBuffers: 0,
+}
+total: 1000000 {
+  rss: 1022812160,
+  heapTotal: 890159104,
+  heapUsed: 310031248,
+  external: 209487,
+  arrayBuffers: 0,
+}
+bun ./memory-rmemo.js  1.07s user 0.21s system 286% cpu 0.446 total
+```
+
+## bun memory-signal.js
+
+```shell
+bun ./memory-signal.js
+...
+1000000 {
+  rss: 769064960,
+  heapTotal: 620545024,
+  heapUsed: 423323583,
+  external: 8651919,
+  arrayBuffers: 0,
+}
+total: 1000000 {
+  rss: 769392640,
+  heapTotal: 620545024,
+  heapUsed: 423323583,
+  external: 16973580,
+  arrayBuffers: 0,
+}
+bun ./memory-signal.js  0.74s user 0.11s system 222% cpu 0.382 total
+```
+
+## node memory-rmemo.js
+```shell
+...
+1000000 {
+  rss: 1152708608,
+  heapTotal: 1103556608,
+  heapUsed: 1060464280,
+  external: 1619130,
+  arrayBuffers: 10467
+}
+total: 1000000 {
+  rss: 1152708608,
+  heapTotal: 1103556608,
+  heapUsed: 1060476424,
+  external: 1619130,
+  arrayBuffers: 10467
+}
+node ./memory-rmemo.js  2.59s user 0.53s system 224% cpu 1.387 total
+```
+
+## node memory-signal.js
+```shell
+...
+1000000 {
+  rss: 1333428224,
+  heapTotal: 1280495616,
+  heapUsed: 1239503256,
+  external: 1619130,
+  arrayBuffers: 10467
+}
+total: 1000000 {
+  rss: 1333592064,
+  heapTotal: 1281544192,
+  heapUsed: 1239816688,
+  external: 1619130,
+  arrayBuffers: 10467
+}
+node ./memory-signal.js  3.21s user 0.59s system 238% cpu 1.598 total
+```
+
+## deno memory-rmemo.js
+```shell
+1000000 [Object: null prototype] {
+  rss: 1183883264,
+  heapTotal: 1090969600,
+  heapUsed: 1054586352,
+  external: 2681434
+}
+total: 1000000 [Object: null prototype] {
+  rss: 1190764544,
+  heapTotal: 1098571776,
+  heapUsed: 1051931376,
+  external: 2681434
+}
+deno run ./memory-rmemo.js  5.14s user 0.83s system 343% cpu 1.740 total
+```
+
+## deno memory-signal.js
+```shell
+...
+1000000 [Object: null prototype] {
+  rss: 1365889024,
+  heapTotal: 1282334720,
+  heapUsed: 1240824072,
+  external: 2681434
+}
+total: 1000000 [Object: null prototype] {
+  rss: 1375555584,
+  heapTotal: 1292296192,
+  heapUsed: 1240406376,
+  external: 2681434
+}
+deno run ./memory-signal.js  5.50s user 0.93s system 331% cpu 1.937 total
+```
+
+## bun async.js (JavascriptCore Benchmark)
 
 ```shell
 bun ./async.js
@@ -25,7 +144,7 @@ bun ./async.js
 Fastest is 1000 Signal chain: without watcher
 ```
 
-## Run sync.js with NodeJS (V8) Benchmark
+## node sync.js (V8) Benchmark
 
 ```shell
 node ./async.js
@@ -41,7 +160,7 @@ node async.js
 Fastest is 1000 Signal chain: without watcher
 ```
 
-## Run sync.js with Deno (V8) Benchmark
+## deno run sync.js (V8) Benchmark
 
 ```shell
 deno run ./sync.js
@@ -58,7 +177,7 @@ deno run async.js
 Fastest is 1000 rmemo chain,1000 Signal chain: without watcher
 ```
 
-## Run sync.js with Bun (JavascriptCore Benchmark)
+## bun sync.js (JavascriptCore Benchmark)
 
 ```shell
 bun ./sync.js
@@ -74,7 +193,7 @@ bun ./sync.js
 Fastest is 1000 Signal chain: without watcher,1000 rmemo chain
 ```
 
-## Run sync.js with NodeJS (V8) Benchmark
+## node sync.js (V8) Benchmark
 
 ```shell
 node ./sync.js
@@ -90,7 +209,7 @@ node ./sync.js
 Fastest is 1000 Signal chain: without watcher
 ```
 
-## Run sync.js with Deno (V8) Benchmark
+## deno run sync.js (V8) Benchmark
 
 ```shell
 deno run ./sync.js
