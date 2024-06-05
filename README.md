@@ -12,7 +12,7 @@ pnpm i
 ## bun memory-rmemo.js
 
 ```shell
-bun ./memory-rmemo.js
+time bun ./memory-rmemo.js
 ...
 1000000 {
   rss: 1022812160,
@@ -34,7 +34,7 @@ bun ./memory-rmemo.js  1.07s user 0.21s system 286% cpu 0.446 total
 ## bun memory-signal.js
 
 ```shell
-bun ./memory-signal.js
+time bun ./memory-signal.js
 ...
 1000000 {
   rss: 769064960,
@@ -55,6 +55,7 @@ bun ./memory-signal.js  0.74s user 0.11s system 222% cpu 0.382 total
 
 ## node memory-rmemo.js
 ```shell
+time node memory-rmemo.js
 ...
 1000000 {
   rss: 1152708608,
@@ -75,6 +76,7 @@ node ./memory-rmemo.js  2.59s user 0.53s system 224% cpu 1.387 total
 
 ## node memory-signal.js
 ```shell
+time node memory-signal.js
 ...
 1000000 {
   rss: 1333428224,
@@ -95,6 +97,8 @@ node ./memory-signal.js  3.21s user 0.59s system 238% cpu 1.598 total
 
 ## deno memory-rmemo.js
 ```shell
+time deno memory-rmemo.js
+...
 1000000 [Object: null prototype] {
   rss: 1183883264,
   heapTotal: 1090969600,
@@ -112,6 +116,7 @@ deno run ./memory-rmemo.js  5.14s user 0.83s system 343% cpu 1.740 total
 
 ## deno memory-signal.js
 ```shell
+time deno memory-signal.js
 ...
 1000000 [Object: null prototype] {
   rss: 1365889024,
