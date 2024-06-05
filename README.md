@@ -14,13 +14,6 @@ pnpm i
 ```shell
 time bun ./memory-rmemo.js
 ...
-1000000 {
-  rss: 1022812160,
-  heapTotal: 890159104,
-  heapUsed: 310031248,
-  external: 209487,
-  arrayBuffers: 0,
-}
 total: 1000000 {
   rss: 1022812160,
   heapTotal: 890159104,
@@ -36,13 +29,6 @@ bun ./memory-rmemo.js  1.07s user 0.21s system 286% cpu 0.446 total
 ```shell
 time bun ./memory-signal.js
 ...
-1000000 {
-  rss: 769064960,
-  heapTotal: 620545024,
-  heapUsed: 423323583,
-  external: 8651919,
-  arrayBuffers: 0,
-}
 total: 1000000 {
   rss: 769392640,
   heapTotal: 620545024,
@@ -57,13 +43,6 @@ bun ./memory-signal.js  0.74s user 0.11s system 222% cpu 0.382 total
 ```shell
 time node memory-rmemo.js
 ...
-1000000 {
-  rss: 1152708608,
-  heapTotal: 1103556608,
-  heapUsed: 1060464280,
-  external: 1619130,
-  arrayBuffers: 10467
-}
 total: 1000000 {
   rss: 1152708608,
   heapTotal: 1103556608,
@@ -78,13 +57,6 @@ node ./memory-rmemo.js  2.59s user 0.53s system 224% cpu 1.387 total
 ```shell
 time node memory-signal.js
 ...
-1000000 {
-  rss: 1333428224,
-  heapTotal: 1280495616,
-  heapUsed: 1239503256,
-  external: 1619130,
-  arrayBuffers: 10467
-}
 total: 1000000 {
   rss: 1333592064,
   heapTotal: 1281544192,
@@ -99,12 +71,6 @@ node ./memory-signal.js  3.21s user 0.59s system 238% cpu 1.598 total
 ```shell
 time deno memory-rmemo.js
 ...
-1000000 [Object: null prototype] {
-  rss: 1183883264,
-  heapTotal: 1090969600,
-  heapUsed: 1054586352,
-  external: 2681434
-}
 total: 1000000 [Object: null prototype] {
   rss: 1190764544,
   heapTotal: 1098571776,
@@ -118,12 +84,6 @@ deno run ./memory-rmemo.js  5.14s user 0.83s system 343% cpu 1.740 total
 ```shell
 time deno memory-signal.js
 ...
-1000000 [Object: null prototype] {
-  rss: 1365889024,
-  heapTotal: 1282334720,
-  heapUsed: 1240824072,
-  external: 2681434
-}
 total: 1000000 [Object: null prototype] {
   rss: 1375555584,
   heapTotal: 1292296192,
