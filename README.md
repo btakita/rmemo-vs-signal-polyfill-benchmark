@@ -109,7 +109,7 @@ bun ./async.js
 Fastest is 1000 Signal chain: without watcher
 ```
 
-## node sync.js (V8) Benchmark
+## node async.js (V8) Benchmark
 
 ```shell
 node ./async.js
@@ -125,7 +125,7 @@ node async.js
 Fastest is 1000 Signal chain: without watcher
 ```
 
-## deno run sync.js (V8) Benchmark
+## deno run async.js (V8) Benchmark
 
 ```shell
 deno run ./sync.js
